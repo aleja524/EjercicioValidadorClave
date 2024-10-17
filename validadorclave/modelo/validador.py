@@ -40,12 +40,14 @@ class ReglaValidacion(ABC):
         return False
 
 
+class Validador:
+    def __init__(self, regla: ReglaValidacion):
+        self.regla = regla
 
 
+class ReglaValidacionGanimedes(ReglaValidacion):
+    pass
 
 
-
-
-
-
-
+class ReglaValidacionCalisto(ReglaValidacion):
+    pass
