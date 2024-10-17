@@ -62,6 +62,24 @@ class ReglaValidacionGanimedes(ReglaValidacion):
                 return True
         return False
 
+    def es_valida(self, clave: str) -> bool:
+        if not self._validar_longitud(clave):
+            raise NoCumpleLongitudMinimaError
+
+        if not self._contiene_mayuscula(clave):
+            raise NoTieneLetraMayusculaError
+
+        if not self._contiene_minuscula(clave):
+            raise NoTieneLetraMinusculaError
+
+        if not self._contiene_numero(clave):
+            raise NoTieneNumeroError
+
+        if not self.contiene_caracter_especial(clave):
+            raise NoTieneCaracterEspecialError
+
+        return True
+
 
 class ReglaValidacionCalisto(ReglaValidacion):
     pass
