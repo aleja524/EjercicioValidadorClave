@@ -19,6 +19,13 @@ class ReglaValidacion(ABC):
         else:
             return False
 
+    @staticmethod
+    def _contiene_mayuscula(clave: str) -> bool:
+        for caracter in clave:
+            if caracter.isupper():
+                return True
+        return False
+
 
 
 
