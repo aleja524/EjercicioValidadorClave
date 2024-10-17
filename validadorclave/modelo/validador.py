@@ -33,6 +33,12 @@ class ReglaValidacion(ABC):
                 return True
         return False
 
+    def _contiene_numero(clave: str) -> bool:
+        for caracter in clave:
+            if caracter.isdigit():
+                return True
+        return False
+
 
 
 
