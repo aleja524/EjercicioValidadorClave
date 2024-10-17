@@ -99,3 +99,4 @@ class ReglaValidacionCalisto(ReglaValidacion):
         if not self.contiene_calisto(clave):
             raise NoTienePalabraSecretaError
         return True
+
