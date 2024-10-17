@@ -85,3 +85,8 @@ class ReglaValidacionCalisto(ReglaValidacion):
 
     def __init__(self):
         super().__init__(6)
+
+    @staticmethod
+    def contiene_calisto(clave: str) -> bool:
+        mayusculas = sum(1 for caracter in clave if caracter.lower() in "calisto" and caracter.isupper())
+        return "calisto" in clave.lower() and 2 <= mayusculas < 7
