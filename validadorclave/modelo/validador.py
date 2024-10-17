@@ -90,3 +90,12 @@ class ReglaValidacionCalisto(ReglaValidacion):
     def contiene_calisto(clave: str) -> bool:
         mayusculas = sum(1 for caracter in clave if caracter.lower() in "calisto" and caracter.isupper())
         return "calisto" in clave.lower() and 2 <= mayusculas < 7
+
+    def es_valida(self, clave: str) -> bool:
+        if not self._validar_longitud(clave):
+            raise NoCumpleLongitudMinimaError
+        if not self._contiene_numero(clave):
+            raise NoTieneNumeroError
+        if not self.contiene_calisto(clave):
+            raise NoTienePalabraSecretaError
+        return True
