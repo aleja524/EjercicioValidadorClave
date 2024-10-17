@@ -82,4 +82,6 @@ class ReglaValidacionGanimedes(ReglaValidacion):
 
 
 class ReglaValidacionCalisto(ReglaValidacion):
-    pass
+
+    def __init__(self):
+        super().__init__(6)
